@@ -1,0 +1,91 @@
+"use client"
+
+import { motion } from "framer-motion"
+import { Quote } from "lucide-react"
+
+const testimonials = [
+  {
+    quote: "Nexusnao transformed our legacy system into a modern powerhouse. Their team is exceptional.",
+    author: "Jane Doe",
+    role: "CTO",
+    company: "FinTech Corp",
+  },
+  {
+    quote: "The AI solution they built saved us 30% in operational costs. Highly recommended.",
+    author: "John Smith",
+    role: "Founder",
+    company: "RetailAI",
+  },
+  {
+    quote: "Professional, transparent, and incredibly skilled. They delivered on time and under budget.",
+    author: "Sarah Johnson",
+    role: "VP of Product",
+    company: "Global Logistics",
+  },
+  {
+    quote: "Their design team captured our brand perfectly. The new site has doubled our conversion rate.",
+    author: "Michael Brown",
+    role: "CMO",
+    company: "TechStart",
+  },
+  {
+    quote: "We've worked with many agencies, but Nexusnao stands out for their technical depth.",
+    author: "Emily Davis",
+    role: "Director of Engineering",
+    company: "SaaS Inc",
+  },
+  {
+    quote: "A true partner in our digital transformation journey. We couldn't have done it without them.",
+    author: "David Wilson",
+    role: "CEO",
+    company: "Enterprise Solutions",
+  },
+]
+
+export function Testimonials() {
+  return (
+    <section className="py-24 bg-neutral-50 dark:bg-neutral-900/50">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+            What Our Clients Say
+          </h2>
+          <p className="text-lg text-neutral-600 dark:text-neutral-400">
+            Trusted by leaders at high-growth companies.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+            >
+              <Quote className="w-8 h-8 text-violet-500/20 mb-6" />
+              <p className="text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">
+                "{testimonial.quote}"
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-cyan-400 flex items-center justify-center text-white font-bold text-sm">
+                  {testimonial.author[0]}
+                </div>
+                <div>
+                  <div className="font-semibold text-neutral-900 dark:text-white">
+                    {testimonial.author}
+                  </div>
+                  <div className="text-sm text-neutral-500 dark:text-neutral-500">
+                    {testimonial.role}, {testimonial.company}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
