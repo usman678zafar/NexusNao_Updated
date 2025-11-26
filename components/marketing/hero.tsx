@@ -23,7 +23,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="space-y-6"
             >
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
                 Crafting Future
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-purple-400 to-cyan-400">
@@ -31,7 +31,7 @@ export function Hero() {
                 </span>
               </h1>
 
-              <p className="text-xl text-neutral-300 leading-relaxed max-w-xl">
+              <p className="text-lg sm:text-xl text-neutral-300 leading-relaxed max-w-xl">
                 Transforming Ideas Into Software Success Stories. We build enterprise-grade solutions that scale.
               </p>
             </motion.div>
@@ -60,11 +60,11 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-start gap-4 pt-4"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-6 w-full sm:w-auto"
             >
               <Button
                 size="lg"
-                className="h-14 px-8 text-base rounded-full bg-gradient-to-r from-violet-600 to-violet-500 hover:from-violet-500 hover:to-violet-600 shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-all duration-300 border-0"
+                className="h-14 px-8 text-base font-semibold rounded-full bg-gradient-to-r from-violet-600 to-violet-500 hover:from-violet-500 hover:to-violet-600 shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-all duration-300 border-0 w-full sm:w-auto justify-center"
                 asChild
               >
                 <Link href="/contact">
@@ -75,11 +75,11 @@ export function Hero() {
               <Button
                 variant="ghost"
                 size="lg"
-                className="h-14 px-8 text-base rounded-full text-white hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all"
+                className="h-14 px-8 text-base font-semibold rounded-full text-white hover:bg-white/10 hover:text-white backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all w-full sm:w-auto justify-center"
                 asChild
               >
                 <Link href="/case-studies" className="flex items-center gap-2">
-                  <Play className="w-5 h-5" />
+                  <Play className="w-5 h-5 fill-current" />
                   View case studies
                 </Link>
               </Button>

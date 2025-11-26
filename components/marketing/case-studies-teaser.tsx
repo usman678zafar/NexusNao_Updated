@@ -9,19 +9,22 @@ const caseStudies = [
   {
     title: "FinTech Transformation",
     category: "Digital Transformation",
-    image: "bg-gradient-to-br from-blue-900 to-slate-900",
+    bgImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop",
+    colorOverlay: "from-blue-900/70 to-slate-900/70",
     href: "/case-studies/fintech-transformation",
   },
   {
     title: "AI-Powered Analytics",
     category: "AI Solutions",
-    image: "bg-gradient-to-br from-violet-900 to-purple-900",
+    bgImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2065&auto=format&fit=crop",
+    colorOverlay: "from-violet-900/70 to-purple-900/70",
     href: "/case-studies/ai-analytics",
   },
   {
     title: "Global E-commerce Platform",
     category: "E-commerce",
-    image: "bg-gradient-to-br from-emerald-900 to-teal-900",
+    bgImage: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2070&auto=format&fit=crop",
+    colorOverlay: "from-emerald-900/70 to-teal-900/70",
     href: "/case-studies/global-ecommerce",
   },
 ]
@@ -57,8 +60,15 @@ export function CaseStudiesTeaser() {
               className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer"
             >
               <Link href={study.href}>
-                <div className={`absolute inset-0 ${study.image} transition-transform duration-500 group-hover:scale-105`} />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  style={{ backgroundImage: `url(${study.bgImage})` }}
+                />
+                
+                {/* Color Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${study.colorOverlay} transition-opacity duration-300`} />
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300" />
                 
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
                   <span className="text-sm font-medium text-violet-300 mb-2">
