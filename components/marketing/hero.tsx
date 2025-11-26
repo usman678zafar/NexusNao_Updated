@@ -11,29 +11,11 @@ const trustLogos = ["FinTech Corp", "RetailAI", "StyleGlobal", "GlobalTech"]
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-
-      <div className="container relative z-10 px-4 md:px-6 py-20 lg:py-32">
+      <div className="container relative z-10 px-6 md:px-12 lg:px-16 py-12 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* Left Column - Content */}
           <div className="space-y-8">
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-cyan-500/10 border border-violet-500/20 backdrop-blur-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-400" />
-                </span>
-                <span className="text-sm font-medium text-violet-300">Accepting New Projects for 2025</span>
-              </div>
-            </motion.div>
-
             {/* Main Heading */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -129,9 +111,6 @@ export function Hero() {
             className="relative flex items-center justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-2xl">
-              {/* Glow Effects */}
-              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/20 via-purple-500/10 to-cyan-400/20 rounded-full blur-3xl" />
-              
               {/* 3D Image */}
               <div className="relative">
                 <Image
@@ -149,8 +128,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Bottom Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
     </section>
   )
 }

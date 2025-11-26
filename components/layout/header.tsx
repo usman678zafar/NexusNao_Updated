@@ -4,21 +4,51 @@ import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, ArrowRight, ChevronDown } from "lucide-react"
+import { Menu, X, ArrowRight, ChevronDown, Code, ShoppingCart, Brain, Palette, BarChart, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
-const navigation = [
+const services = [
   { 
-    name: "Services", 
-    href: "/services",
-    submenu: [
-      { name: "Custom Software", href: "/services/custom-software-development" },
-      { name: "AI Solutions", href: "/services/ai-solutions" },
-      { name: "E-commerce", href: "/services/e-commerce-solutions" },
-      { name: "UI/UX Design", href: "/services/ui-ux-design" },
-    ]
+    name: "Custom Software", 
+    href: "/services/custom-software-development",
+    icon: Code,
+    description: "Tailored solutions for your unique needs"
   },
+  { 
+    name: "E-commerce Solutions", 
+    href: "/services/e-commerce-solutions",
+    icon: ShoppingCart,
+    description: "Scalable online stores that convert"
+  },
+  { 
+    name: "AI Solutions", 
+    href: "/services/ai-solutions",
+    icon: Brain,
+    description: "Intelligent automation and insights"
+  },
+  { 
+    name: "UI/UX Design", 
+    href: "/services/ui-ux-design",
+    icon: Palette,
+    description: "Beautiful, intuitive interfaces"
+  },
+  { 
+    name: "Business Intelligence", 
+    href: "/services/business-intelligence",
+    icon: BarChart,
+    description: "Data-driven decision making"
+  },
+  { 
+    name: "Digital Transformation", 
+    href: "/services/digital-transformation",
+    icon: Zap,
+    description: "Modernize your operations"
+  },
+]
+
+const navigation = [
+  { name: "Services", href: "/services", hasDropdown: true },
   { name: "Case Studies", href: "/case-studies" },
   { name: "Process", href: "/process" },
   { name: "About", href: "/about" },
@@ -28,8 +58,9 @@ const navigation = [
 export function Header() {
   const [isOpen, setIsOpen] = React.useState(false)
   const [isScrolled, setIsScrolled] = React.useState(false)
-  const [activeDropdown, setActiveDropdown] = React.useState<string | null>(null)
+  const [showServicesDropdown, setShowServicesDropdown] = React.useState(false)
   const pathname = usePathname()
+  const dropdownRef = React.useRef<HTMLDivElement>(null)
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -41,8 +72,18 @@ export function Header() {
 
   React.useEffect(() => {
     setIsOpen(false)
-    setActiveDropdown(null)
+    setShowServicesDropdown(false)
   }, [pathname])
+
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowServicesDropdown(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
 
   return (
     <header
@@ -56,15 +97,8 @@ export function Header() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 z-50 group">
-          <motion.div 
-            whileHover={{ scale: 1.05, rotate: 5 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-600 via-violet-500 to-cyan-400 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-violet-500/30"
-          >
-            N
-          </motion.div>
           <span className="font-bold text-xl tracking-tight text-neutral-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-            Nexusnao
+            Nexus Nao
           </span>
         </Link>
 
@@ -74,8 +108,9 @@ export function Header() {
             <div 
               key={item.name}
               className="relative"
-              onMouseEnter={() => item.submenu && setActiveDropdown(item.name)}
-              onMouseLeave={() => setActiveDropdown(null)}
+              ref={item.hasDropdown ? dropdownRef : null}
+              onMouseEnter={() => item.hasDropdown && setShowServicesDropdown(true)}
+              onMouseLeave={() => item.hasDropdown && setShowServicesDropdown(false)}
             >
               <Link
                 href={item.href}
@@ -87,10 +122,10 @@ export function Header() {
                 )}
               >
                 {item.name}
-                {item.submenu && (
+                {item.hasDropdown && (
                   <ChevronDown className={cn(
                     "w-3 h-3 transition-transform duration-200",
-                    activeDropdown === item.name && "rotate-180"
+                    showServicesDropdown && "rotate-180"
                   )} />
                 )}
                 {(pathname === item.href || pathname.startsWith(item.href + "/")) && (
@@ -102,24 +137,47 @@ export function Header() {
                 )}
               </Link>
 
-              {/* Dropdown Menu */}
-              {item.submenu && activeDropdown === item.name && (
+              {/* Services Dropdown */}
+              {item.hasDropdown && showServicesDropdown && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl shadow-xl overflow-hidden"
+                  className="absolute top-full left-0 mt-2 w-80 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-2xl overflow-hidden"
                 >
-                  {item.submenu.map((subItem) => (
-                    <Link
-                      key={subItem.name}
-                      href={subItem.href}
-                      className="block px-4 py-3 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-violet-50 dark:hover:bg-violet-950/30 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                  <div className="p-2">
+                    {services.map((service) => {
+                      const Icon = service.icon
+                      return (
+                        <Link
+                          key={service.name}
+                          href={service.href}
+                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-violet-50 dark:hover:bg-violet-950/30 transition-colors group"
+                        >
+                          <div className="mt-1 p-2 rounded-lg bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 group-hover:scale-110 transition-transform">
+                            <Icon className="w-4 h-4" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-semibold text-sm text-neutral-900 dark:text-white mb-0.5">
+                              {service.name}
+                            </div>
+                            <div className="text-xs text-neutral-600 dark:text-neutral-400">
+                              {service.description}
+                            </div>
+                          </div>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                  <div className="border-t border-neutral-200 dark:border-neutral-800 p-3 bg-neutral-50 dark:bg-neutral-900/50">
+                    <Link 
+                      href="/services" 
+                      className="text-sm font-medium text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 flex items-center gap-1"
                     >
-                      {subItem.name}
+                      View all services <ArrowRight className="w-3 h-3" />
                     </Link>
-                  ))}
+                  </div>
                 </motion.div>
               )}
             </div>
@@ -176,15 +234,15 @@ export function Header() {
                     >
                       {item.name}
                     </Link>
-                    {item.submenu && (
+                    {item.hasDropdown && (
                       <div className="ml-4 mt-2 space-y-1">
-                        {item.submenu.map((subItem) => (
+                        {services.map((service) => (
                           <Link
-                            key={subItem.name}
-                            href={subItem.href}
+                            key={service.name}
+                            href={service.href}
                             className="block px-4 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
                           >
-                            {subItem.name}
+                            {service.name}
                           </Link>
                         ))}
                       </div>
