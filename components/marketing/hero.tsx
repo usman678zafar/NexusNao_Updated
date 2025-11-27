@@ -73,9 +73,8 @@ export function Hero() {
               </Button>
 
               <Button
-                variant="ghost"
                 size="lg"
-                className="h-14 px-8 text-base font-semibold rounded-full text-white hover:bg-white/10 hover:text-white backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all w-full sm:w-auto justify-center"
+                className="h-14 px-8 text-base font-semibold rounded-full bg-white text-black hover:bg-white/90 transition-all w-full sm:w-auto justify-center"
                 asChild
               >
                 <Link href="/case-studies" className="flex items-center gap-2">
