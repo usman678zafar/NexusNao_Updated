@@ -3,8 +3,8 @@
 import { motion } from "framer-motion"
 
 const metrics = [
-  { label: "Projects Delivered", value: "500+", suffix: "" },
-  { label: "Years Experience", value: "15+", suffix: "" },
+  { label: "Projects Delivered", value: "50+", suffix: "" },
+  { label: "Years Experience", value: "4+", suffix: "" },
   { label: "Coding Hours", value: "1M+", suffix: "" },
   { label: "Client Retention", value: "98", suffix: "%" },
 ]

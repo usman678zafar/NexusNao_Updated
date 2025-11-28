@@ -44,9 +44,9 @@ export function Hero() {
               className="space-y-3"
             >
               {[
-                '500+ Projects Delivered',
+                '50+ Projects Delivered',
                 '98% Client Satisfaction',
-                '15+ Years Experience'
+                '4+ Years Experience'
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 text-neutral-200">
                   <CheckCircle2 className="w-5 h-5 text-violet-400 flex-shrink-0" />
