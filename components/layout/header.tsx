@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, ArrowRight, ChevronDown, Code, ShoppingCart, Brain, Palette, BarChart, Zap } from "lucide-react"
+import { Menu, X, ArrowRight, ChevronDown, Terminal, ShoppingBag, Bot, PenTool, LineChart, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -13,37 +13,37 @@ const services = [
   { 
     name: "Custom Software", 
     href: "/services/custom-software-development",
-    icon: Code,
+    icon: Terminal,
     description: "Tailored solutions for your unique needs"
   },
   { 
     name: "E-commerce Solutions", 
     href: "/services/e-commerce-solutions",
-    icon: ShoppingCart,
+    icon: ShoppingBag,
     description: "Scalable online stores that convert"
   },
   { 
     name: "AI Solutions", 
     href: "/services/ai-solutions",
-    icon: Brain,
+    icon: Bot,
     description: "Intelligent automation and insights"
   },
   { 
     name: "UI/UX Design", 
     href: "/services/ui-ux-design",
-    icon: Palette,
+    icon: PenTool,
     description: "Beautiful, intuitive interfaces"
   },
   { 
     name: "Business Intelligence", 
     href: "/services/business-intelligence",
-    icon: BarChart,
+    icon: LineChart,
     description: "Data-driven decision making"
   },
   { 
     name: "Digital Transformation", 
     href: "/services/digital-transformation",
-    icon: Zap,
+    icon: Globe,
     description: "Modernize your operations"
   },
 ]
