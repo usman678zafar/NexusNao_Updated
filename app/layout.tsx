@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     template: '%s | Nexusnao',
-    default: 'Nexusnao | Enterprise Software Development & AI Solutions',
+    default: 'Nexus Nao • Enterprise Software & E Commerce Solutions',
   },
   description: 'Nexusnao delivers custom software, AI solutions, and digital transformation services for global enterprises. Book a discovery call today.',
   keywords: ['Custom Software', 'AI Solutions', 'Web Development', 'Enterprise', 'B2B'],
