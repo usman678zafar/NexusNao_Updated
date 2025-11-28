@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, ArrowRight, ChevronDown, Code, ShoppingCart, Brain, Palette, BarChart, Zap } from "lucide-react"
@@ -97,9 +98,13 @@ export function Header() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 z-50 group">
-          <span className="font-bold text-xl tracking-tight text-neutral-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-            Nexus Nao
-          </span>
+          <Image 
+            src="/logo1.png" 
+            alt="Nexus Nao" 
+            width={180} 
+            height={40} 
+            className="h-10 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Nav */}

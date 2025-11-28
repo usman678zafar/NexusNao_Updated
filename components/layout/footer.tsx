@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react"
 
 const footerLinks = {
@@ -36,12 +37,13 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-600 to-cyan-400 flex items-center justify-center text-white font-bold text-lg">
-                N
-              </div>
-              <span className="font-bold text-xl tracking-tight text-white">
-                Nexusnao
-              </span>
+              <Image 
+                src="/logo-white.png" 
+                alt="Nexusnao" 
+                width={180} 
+                height={40} 
+                className="h-10 w-auto object-contain"
+              />
             </Link>
             <p className="text-neutral-400 mb-6 max-w-sm leading-relaxed">
               We engineer high-performance digital platforms, AI solutions, and custom software for ambitious global enterprises.

@@ -41,7 +41,6 @@ export const metadata: Metadata = {
     creator: '@nexusnao',
   },
   robots: {
-    index: true,
     follow: true,
   },
 };
