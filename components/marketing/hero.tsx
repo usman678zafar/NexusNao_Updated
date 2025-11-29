@@ -37,15 +37,15 @@ export function Hero() {
               className="space-y-6"
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-                Crafting Future
+                Building Tomorrow’s
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-purple-400 to-cyan-400">
-                  Software Today
+                  Software, Today
                 </span>
               </h1>
 
               <p className="text-lg sm:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto">
-                Transforming Ideas Into Software Success Stories. We build enterprise-grade solutions that scale.
+                Enterprise-grade solutions designed to scale, accelerate growth, and turn ambitious ideas into digital success stories.
               </p>
             </motion.div>
 
