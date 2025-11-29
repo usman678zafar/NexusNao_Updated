@@ -84,11 +84,14 @@ export function ServicesGrid() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative overflow-hidden rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 hover:border-violet-200 dark:hover:border-violet-500 hover:shadow-xl hover:shadow-violet-500/5 dark:hover:shadow-violet-500/10 transition-all duration-300"
             >
-              {/* Background Image (Subtle on hover) */}
+              {/* Background Image */}
               <div 
-                className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-5 dark:group-hover:opacity-10 transition-opacity duration-500"
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                 style={{ backgroundImage: `url(${service.bgImage})` }}
               />
+              
+              {/* Color Overlay */}
+              <div className="absolute inset-0 bg-black/70 dark:bg-black/60 group-hover:bg-black/60 dark:group-hover:bg-black/50 transition-all duration-300" />
               
               {/* Content */}
               <div className="relative z-10 p-8">
