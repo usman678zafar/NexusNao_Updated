@@ -17,17 +17,17 @@ export function Hero() {
           src="/hero-image.png"
           alt="Hero Background"
           fill
-          className="object-cover opacity-60"
+          className="object-cover object-right opacity-60"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
       </div>
 
       <div className="container relative z-10 px-6 md:px-12 lg:px-16 py-12 lg:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-12">
           
-          {/* Left Column - Content */}
+          {/* Main Content */}
           <div className="space-y-8">
             {/* Main Heading */}
             <motion.div
@@ -44,7 +44,7 @@ export function Hero() {
                 </span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-neutral-300 leading-relaxed max-w-xl">
+              <p className="text-lg sm:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto">
                 Transforming Ideas Into Software Success Stories. We build enterprise-grade solutions that scale.
               </p>
             </motion.div>
@@ -54,7 +54,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="space-y-3"
+              className="flex flex-wrap justify-center gap-6"
             >
               {[
                 '50+ Projects Delivered',
@@ -73,11 +73,11 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-6 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
             >
               <Button
                 size="lg"
-                className="h-14 px-8 text-base font-semibold rounded-full bg-gradient-to-r from-violet-600 to-violet-500 hover:from-violet-500 hover:to-violet-600 shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-all duration-300 border-0 w-full sm:w-auto justify-center"
+                className="h-14 px-8 text-base font-semibold rounded-full bg-gradient-to-r from-violet-600 to-violet-500 hover:from-violet-500 hover:to-violet-600 shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-all duration-300 border-0 w-full sm:w-auto"
                 asChild
               >
                 <Link href="/contact">
@@ -87,7 +87,7 @@ export function Hero() {
 
               <Button
                 size="lg"
-                className="h-14 px-8 text-base font-semibold rounded-full bg-white text-black hover:bg-white/90 transition-all w-full sm:w-auto justify-center"
+                className="h-14 px-8 text-base font-semibold rounded-full bg-white text-black hover:bg-white/90 transition-all w-full sm:w-auto"
                 asChild
               >
                 <Link href="/case-studies" className="flex items-center gap-2">
@@ -102,41 +102,18 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.35 }}
-              className="pt-6"
+              className="pt-8"
             >
-              <div className="text-xs uppercase tracking-[0.2em] text-neutral-500 mb-4">Trusted by product teams at</div>
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="text-xs uppercase tracking-[0.2em] text-neutral-500 mb-6">Trusted by product teams at</div>
+              <div className="flex flex-wrap justify-center gap-4">
                 {trustLogos.map((logo) => (
-                  <div key={logo} className="px-4 py-2 rounded-lg border border-neutral-800 bg-neutral-900/40 text-sm text-neutral-400">
+                  <div key={logo} className="px-6 py-2 rounded-full border border-neutral-800 bg-neutral-900/40 text-sm text-neutral-400 backdrop-blur-sm">
                     {logo}
                   </div>
                 ))}
               </div>
             </motion.div>
           </div>
-
-          {/* Right Column - 3D Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative flex items-center justify-center lg:justify-end"
-          >
-            <div className="relative w-full max-w-2xl">
-              {/* 3D Image */}
-              <div className="relative">
-                {/* <Image
-                  src="/hero-visual.gif"
-                  alt="Futuristic Technology Animation"
-                  width={800}
-                  height={800}
-                  className="w-auto h-[65vh] object-contain drop-shadow-2xl"
-                  priority
-                  unoptimized
-                /> */}
-              </div>
-            </div>
-          </motion.div>
 
         </div>
       </div>
