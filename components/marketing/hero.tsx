@@ -10,22 +10,23 @@ const trustLogos = ["FinTech Corp", "RetailAI", "StyleGlobal", "GlobalTech"]
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-black">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-image.png"
+          src="/hero-image2.jpg"
           alt="Hero Background"
           fill
-          className="object-cover object-right opacity-60"
+          className="object-cover object-center md:object-right opacity-60"
           priority
           unoptimized
+          sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70" /> 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80 md:from-black/70 md:via-transparent md:to-black/70" /> 
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/70 md:from-black/80 md:via-transparent md:to-transparent" />
       </div>
 
-      <div className="container relative z-10 px-6 md:px-12 lg:px-16 py-12 lg:py-16">
+      <div className="container relative z-10 px-4 sm:px-6 md:px-12 lg:px-16 py-16 sm:py-20 md:py-12 lg:py-16">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-12">
           
           {/* Main Content */}
