@@ -69,19 +69,16 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full"
             >
               <div className="flex justify-between items-start mb-6">
                 <Quote className="w-8 h-8 text-violet-500/20" />
                 <span className="text-2xl" role="img" aria-label={`Flag of ${testimonial.flag}`}>{testimonial.flag}</span>
               </div>
-              <p className="text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">
+              <p className="text-neutral-700 dark:text-neutral-300 mb-8 leading-relaxed flex-grow">
                 "{testimonial.quote}"
               </p>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-cyan-400 flex items-center justify-center text-white font-bold text-sm">
-                  {testimonial.author[0]}
-                </div>
+              <div className="flex items-center gap-4 mt-auto">
                 <div>
                   <div className="font-semibold text-neutral-900 dark:text-white">
                     {testimonial.author}
