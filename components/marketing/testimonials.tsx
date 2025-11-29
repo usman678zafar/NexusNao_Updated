@@ -9,36 +9,42 @@ const testimonials = [
     author: "Jane Doe",
     role: "CTO",
     company: "FinTech Corp",
+    flag: "🇺🇸",
   },
   {
     quote: "The AI solution they built saved us 30% in operational costs. Highly recommended.",
     author: "John Smith",
     role: "Founder",
     company: "RetailAI",
+    flag: "🇬🇧",
   },
   {
     quote: "Professional, transparent, and incredibly skilled. They delivered on time and under budget.",
     author: "Sarah Johnson",
     role: "VP of Product",
     company: "Global Logistics",
+    flag: "🇨🇦",
   },
   {
     quote: "Their design team captured our brand perfectly. The new site has doubled our conversion rate.",
     author: "Michael Brown",
     role: "CMO",
     company: "TechStart",
+    flag: "🇦🇺",
   },
   {
     quote: "We've worked with many agencies, but Nexusnao stands out for their technical depth.",
     author: "Emily Davis",
     role: "Director of Engineering",
     company: "SaaS Inc",
+    flag: "🇩🇪",
   },
   {
     quote: "A true partner in our digital transformation journey. We couldn't have done it without them.",
     author: "David Wilson",
     role: "CEO",
     company: "Enterprise Solutions",
+    flag: "🇫🇷",
   },
 ]
 
@@ -65,7 +71,10 @@ export function Testimonials() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
             >
-              <Quote className="w-8 h-8 text-violet-500/20 mb-6" />
+              <div className="flex justify-between items-start mb-6">
+                <Quote className="w-8 h-8 text-violet-500/20" />
+                <span className="text-2xl" role="img" aria-label={`Flag of ${testimonial.flag}`}>{testimonial.flag}</span>
+              </div>
               <p className="text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">
                 "{testimonial.quote}"
               </p>
