@@ -20,9 +20,8 @@ export function Hero() {
           className="object-cover object-right opacity-60"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-black/90" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/70" />
-
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70" /> 
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
       </div>
 
       <div className="container relative z-10 px-6 md:px-12 lg:px-16 py-12 lg:py-16">
