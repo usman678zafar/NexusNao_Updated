@@ -95,18 +95,18 @@ export function ServicesGrid() {
               
               {/* Content */}
               <div className="relative z-10 p-8">
-                <div className={`w-12 h-12 rounded-xl ${service.bg} dark:${service.bg.replace('/10', '/20')} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <service.icon className={`w-6 h-6 ${service.color}`} />
                 </div>
-                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3">
+                <h3 className="text-xl font-semibold text-white mb-3">
                   {service.title}
                 </h3>
-                <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed">
+                <p className="text-neutral-200 mb-6 leading-relaxed">
                   {service.description}
                 </p>
                 <Link
                   href={service.href}
-                  className="inline-flex items-center text-sm font-medium text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 transition-colors"
+                  className="inline-flex items-center text-sm font-medium text-white hover:text-violet-300 transition-colors"
                 >
                   Learn more <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
