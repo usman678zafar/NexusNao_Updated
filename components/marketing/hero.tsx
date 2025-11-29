@@ -11,6 +11,19 @@ const trustLogos = ["FinTech Corp", "RetailAI", "StyleGlobal", "GlobalTech"]
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/hero-image.png"
+          alt="Hero Background"
+          fill
+          className="object-cover opacity-60"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+      </div>
+
       <div className="container relative z-10 px-6 md:px-12 lg:px-16 py-12 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
@@ -112,14 +125,15 @@ export function Hero() {
             <div className="relative w-full max-w-2xl">
               {/* 3D Image */}
               <div className="relative">
-                <Image
-                  src="/hero-3d-visual.png"
-                  alt="3D Visual"
+                {/* <Image
+                  src="/hero-visual.gif"
+                  alt="Futuristic Technology Animation"
                   width={800}
                   height={800}
-                  className="w-full h-auto drop-shadow-2xl"
+                  className="w-auto h-[65vh] object-contain drop-shadow-2xl"
                   priority
-                />
+                  unoptimized
+                /> */}
               </div>
             </div>
           </motion.div>
