@@ -4,8 +4,9 @@ import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
+import { useTheme } from "next-themes"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, ArrowRight, ChevronDown, Terminal, ShoppingBag, Bot, PenTool, LineChart, Globe } from "lucide-react"
+import { Menu, X, ArrowRight, ChevronDown, Terminal, ShoppingBag, Bot, PenTool, LineChart, Globe, Sun, Moon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -62,6 +63,12 @@ export function Header() {
   const [showServicesDropdown, setShowServicesDropdown] = React.useState(false)
   const pathname = usePathname()
   const dropdownRef = React.useRef<HTMLDivElement>(null)
+  const { theme, setTheme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -99,7 +106,7 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 z-50 group">
           <Image 
-            src="/logo1.png" 
+            src={mounted && (theme === 'dark' || resolvedTheme === 'dark') ? "/logo-white.png" : "/logo1.png"} 
             alt="Nexus Nao" 
             width={180} 
             height={40} 
@@ -191,6 +198,16 @@ export function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800"
+          >
+            <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">Toggle theme</span>
+          </Button>
           <Button 
             variant="ghost" 
             asChild 
@@ -256,6 +273,19 @@ export function Header() {
                 ))}
               </nav>
               <div className="mt-8 space-y-3">
+                <div className="flex items-center justify-between px-1 mb-4">
+                  <span className="text-base font-medium text-neutral-900 dark:text-white">Appearance</span>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    className="rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                  >
+                    <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                    <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                    <span className="sr-only">Toggle theme</span>
+                  </Button>
+                </div>
                 <Button variant="outline" asChild className="w-full rounded-full">
                   <Link href="/contact">Contact Us</Link>
                 </Button>
