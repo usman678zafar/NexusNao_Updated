@@ -13,7 +13,7 @@ const logos = [
 
 export function LogoWall() {
   return (
-    <section className="py-12 bg-neutral-950 border-b border-neutral-900">
+    <section className="py-12 bg-neutral-950 border-b border-neutral-900 rounded-[2.5rem] mx-4 my-4 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <p className="text-center text-sm font-medium text-neutral-500 mb-8 uppercase tracking-wider">
           Trusted by forward-thinking companies worldwide

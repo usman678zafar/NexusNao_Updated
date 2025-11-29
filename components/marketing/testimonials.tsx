@@ -44,7 +44,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 bg-neutral-50 dark:bg-neutral-900/50">
+    <section className="py-24 bg-neutral-50 dark:bg-neutral-900/50 rounded-[2.5rem] mx-4 my-4 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">

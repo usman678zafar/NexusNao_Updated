@@ -31,7 +31,7 @@ const caseStudies = [
 
 export function CaseStudiesTeaser() {
   return (
-    <section className="py-24 bg-white dark:bg-neutral-950">
+    <section className="py-24 bg-white dark:bg-neutral-950 rounded-[2.5rem] mx-4 my-4 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
