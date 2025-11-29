@@ -63,13 +63,13 @@ const services = [
 
 export function ServicesGrid() {
   return (
-    <section className="relative py-24 overflow-hidden bg-neutral-50">
+    <section className="relative py-24 overflow-hidden bg-neutral-50 dark:bg-neutral-900">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
             End-to-End Digital Engineering
           </h2>
-          <p className="text-lg text-neutral-600">
+          <p className="text-lg text-neutral-600 dark:text-neutral-300">
             From concept to scale, we deliver robust solutions that drive growth.
           </p>
         </div>
@@ -82,28 +82,28 @@ export function ServicesGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl bg-white border border-neutral-200 hover:border-violet-200 hover:shadow-xl hover:shadow-violet-500/5 transition-all duration-300"
+              className="group relative overflow-hidden rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 hover:border-violet-200 dark:hover:border-violet-500 hover:shadow-xl hover:shadow-violet-500/5 dark:hover:shadow-violet-500/10 transition-all duration-300"
             >
               {/* Background Image (Subtle on hover) */}
               <div 
-                className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-5 transition-opacity duration-500"
+                className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-5 dark:group-hover:opacity-10 transition-opacity duration-500"
                 style={{ backgroundImage: `url(${service.bgImage})` }}
               />
               
               {/* Content */}
               <div className="relative z-10 p-8">
-                <div className={`w-12 h-12 rounded-xl ${service.bg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-12 h-12 rounded-xl ${service.bg} dark:${service.bg.replace('/10', '/20')} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <service.icon className={`w-6 h-6 ${service.color}`} />
                 </div>
-                <h3 className="text-xl font-semibold text-neutral-900 mb-3">
+                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3">
                   {service.title}
                 </h3>
-                <p className="text-neutral-600 mb-6 leading-relaxed">
+                <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed">
                   {service.description}
                 </p>
                 <Link
                   href={service.href}
-                  className="inline-flex items-center text-sm font-medium text-violet-600 hover:text-violet-700 transition-colors"
+                  className="inline-flex items-center text-sm font-medium text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 transition-colors"
                 >
                   Learn more <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>

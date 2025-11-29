@@ -14,7 +14,7 @@ export function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/giphy.gif"
+          src="/hero-3d-visual.png"
           alt="Hero Background"
           fill
           className="object-cover object-right opacity-60"
