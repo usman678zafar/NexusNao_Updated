@@ -19,6 +19,7 @@ export function Hero() {
           fill
           className="object-cover object-right opacity-60"
           priority
+          unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70" /> 
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
