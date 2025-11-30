@@ -36,7 +36,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-900 dark:text-white mb-1">Email</h3>
-                    <p className="text-neutral-600 dark:text-neutral-400">hello@nexusnao.com</p>
+                    <p className="text-neutral-600 dark:text-neutral-400">info@nexusnao.com</p>
                   </div>
                 </div>
 
@@ -46,7 +46,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-900 dark:text-white mb-1">Phone</h3>
-                    <p className="text-neutral-600 dark:text-neutral-400">+1 (555) 123-4567</p>
+                    <p className="text-neutral-600 dark:text-neutral-400">+92 (306) 801-3166</p>
                   </div>
                 </div>
 
@@ -57,8 +57,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-neutral-900 dark:text-white mb-1">Office</h3>
                     <p className="text-neutral-600 dark:text-neutral-400">
-                      123 Innovation Drive<br />
-                      Tech City, TC 90210
+                      Gulshan-e-Maymar<br />
+                      Karachi, Pakistan
                     </p>
                   </div>
                 </div>
