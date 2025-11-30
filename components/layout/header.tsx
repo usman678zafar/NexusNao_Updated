@@ -127,26 +127,30 @@ export function Header() {
               <Link
                 href={item.href}
                 className={cn(
-                  "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-1 relative group",
+                  "relative px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 flex items-center gap-1 group z-10",
                   pathname === item.href || pathname.startsWith(item.href + "/")
-                    ? "text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-950/30"
-                    : "text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/50"
+                    ? "text-violet-600 dark:text-violet-300"
+                    : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
                 )}
               >
-                {item.name}
-                {item.hasDropdown && (
-                  <ChevronDown className={cn(
-                    "w-3 h-3 transition-transform duration-200",
-                    showServicesDropdown && "rotate-180"
-                  )} />
-                )}
+                {/* Sliding Pill Background */}
                 {(pathname === item.href || pathname.startsWith(item.href + "/")) && (
                   <motion.div
                     layoutId="activeNav"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-violet-600 to-cyan-400"
+                    className="absolute inset-0 bg-violet-100 dark:bg-violet-900/40 rounded-full -z-10"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
+                
+                <motion.span whileTap={{ scale: 0.95 }} className="flex items-center gap-1">
+                  {item.name}
+                  {item.hasDropdown && (
+                    <ChevronDown className={cn(
+                      "w-3 h-3 transition-transform duration-200",
+                      showServicesDropdown && "rotate-180"
+                    )} />
+                  )}
+                </motion.span>
               </Link>
 
               {/* Services Dropdown */}
