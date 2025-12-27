@@ -28,18 +28,17 @@ const footerLinks = {
 export function Footer() {
   return (
     <footer className="bg-neutral-950 text-neutral-300 border-t border-neutral-800">
-      <div className="w-full h-1 bg-gradient-to-r from-violet-600 to-cyan-400" />
-      
+
       <div className="container mx-auto px-4 md:px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
-              <Image 
-                src="/logo-white.png" 
-                alt="Nexusnao" 
-                width={180} 
-                height={40} 
+              <Image
+                src="/logo-white.png"
+                alt="Nexusnao"
+                width={180}
+                height={40}
                 className="h-10 w-auto object-contain"
               />
             </Link>
@@ -47,13 +46,13 @@ export function Footer() {
               We engineer high-performance digital platforms, AI solutions, and custom software for ambitious global enterprises.
             </p>
             <div className="flex items-center gap-4">
-              <Link href="https://twitter.com" className="p-2 rounded-full bg-neutral-900 hover:bg-neutral-800 transition-colors text-neutral-400 hover:text-white">
+              <Link href="https://twitter.com" className="p-2 bg-neutral-900 hover:bg-neutral-800 transition-colors text-neutral-400 hover:text-white">
                 <Twitter className="w-5 h-5" />
               </Link>
-              <Link href="https://linkedin.com" className="p-2 rounded-full bg-neutral-900 hover:bg-neutral-800 transition-colors text-neutral-400 hover:text-white">
+              <Link href="https://linkedin.com" className="p-2 bg-neutral-900 hover:bg-neutral-800 transition-colors text-neutral-400 hover:text-white">
                 <Linkedin className="w-5 h-5" />
               </Link>
-              <Link href="https://github.com" className="p-2 rounded-full bg-neutral-900 hover:bg-neutral-800 transition-colors text-neutral-400 hover:text-white">
+              <Link href="https://github.com" className="p-2 bg-neutral-900 hover:bg-neutral-800 transition-colors text-neutral-400 hover:text-white">
                 <Github className="w-5 h-5" />
               </Link>
             </div>
@@ -65,7 +64,7 @@ export function Footer() {
             <ul className="space-y-4">
               {footerLinks.Services.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm hover:text-violet-400 transition-colors">
+                  <Link href={link.href} className="text-sm hover:text-blue-400 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -78,7 +77,7 @@ export function Footer() {
             <ul className="space-y-4">
               {footerLinks.Company.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm hover:text-violet-400 transition-colors">
+                  <Link href={link.href} className="text-sm hover:text-blue-400 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -91,7 +90,7 @@ export function Footer() {
             <ul className="space-y-4">
               {footerLinks.Resources.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm hover:text-violet-400 transition-colors">
+                  <Link href={link.href} className="text-sm hover:text-blue-400 transition-colors">
                     {link.name}
                   </Link>
                 </li>

@@ -33,6 +33,28 @@ export function Hero() {
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80 md:from-black/70 md:via-transparent md:to-black/70" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/70 md:from-black/80 md:via-transparent md:to-transparent" />
+
+        {/* Floating Shapes */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <motion.div
+            animate={{
+              y: [0, -20, 0],
+              rotate: [0, 10, 0],
+              opacity: [0.1, 0.2, 0.1]
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+            className="absolute top-1/4 -left-20 w-80 h-80 bg-blue-500/10 blur-[100px] rounded-full"
+          />
+          <motion.div
+            animate={{
+              y: [0, 20, 0],
+              rotate: [0, -10, 0],
+              opacity: [0.1, 0.15, 0.1]
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-1/4 -right-20 w-96 h-96 bg-cyan-500/10 blur-[120px] rounded-full"
+          />
+        </div>
       </div>
 
       <div className="container relative z-10 px-4 sm:px-6 md:px-12 lg:px-16 py-16 sm:py-20 md:py-12 lg:py-16">
@@ -42,22 +64,38 @@ export function Hero() {
           <div className="space-y-8">
             {/* Main Heading */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="space-y-6"
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-                Building Tomorrow’s
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-purple-400 to-cyan-400">
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="block"
+                >
+                  Building Tomorrow’s
+                </motion.span>
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 block pb-2"
+                >
                   Software, Today
-                </span>
+                </motion.span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-lg sm:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto"
+              >
                 Enterprise-grade solutions designed to scale, accelerate growth, and turn ambitious ideas into digital success stories.
-              </p>
+              </motion.p>
             </motion.div>
 
             {/* Key Features */}
@@ -73,7 +111,7 @@ export function Hero() {
                 '4+ Years Experience'
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 text-neutral-200">
-                  <CheckCircle2 className="w-5 h-5 text-violet-400 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0" />
                   <span className="text-base font-medium">{item}</span>
                 </div>
               ))}
@@ -88,7 +126,7 @@ export function Hero() {
             >
               <Button
                 size="lg"
-                className="h-14 px-8 text-base font-semibold rounded-none bg-gradient-to-r from-violet-600 to-violet-500 hover:from-violet-500 hover:to-violet-600 shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-all duration-300 border-0 w-full sm:w-auto"
+                className="h-14 px-8 text-base font-semibold rounded-none bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-600 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 border-0 w-full sm:w-auto shine-effect"
                 asChild
               >
                 <Link href="/contact">

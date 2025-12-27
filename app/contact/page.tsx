@@ -1,11 +1,9 @@
+"use client"
+
 import { ContactForm } from "@/components/marketing/contact-form"
 import { motion } from "framer-motion"
 import { Mail, MapPin, Phone } from "lucide-react"
 
-export const metadata = {
-  title: "Contact Us",
-  description: "Get in touch with Nexusnao to discuss your next project.",
-}
 
 export default function ContactPage() {
   return (

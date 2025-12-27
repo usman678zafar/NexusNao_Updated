@@ -62,7 +62,7 @@ export default function ProcessPage() {
             {steps.map((step, index) => (
               <div key={index} className="flex flex-col md:flex-row gap-8">
                 <div className="flex-shrink-0">
-                  <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-violet-600 to-cyan-400 opacity-50">
+                  <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-cyan-400 opacity-50">
                     {step.number}
                   </div>
                 </div>
@@ -73,13 +73,13 @@ export default function ProcessPage() {
                   <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
                     {step.description}
                   </p>
-                  <div className="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl border border-neutral-200 dark:border-neutral-800">
+                  <div className="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-none border border-neutral-200 dark:border-neutral-800">
                     <h3 className="font-semibold text-sm text-neutral-500 uppercase tracking-wider mb-3">
                       Key Deliverables
                     </h3>
                     <ul className="flex flex-wrap gap-3">
                       {step.deliverables.map((item) => (
-                        <li key={item} className="px-3 py-1 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-full text-sm text-neutral-700 dark:text-neutral-300">
+                        <li key={item} className="px-3 py-1 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-none text-sm text-neutral-700 dark:text-neutral-300">
                           {item}
                         </li>
                       ))}

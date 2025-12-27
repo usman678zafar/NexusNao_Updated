@@ -25,22 +25,22 @@ export default function CaseStudiesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {caseStudies.map((study) => (
               <Link key={study.slug} href={`/case-studies/${study.slug}`} className="group block">
-                <div className="aspect-video bg-neutral-100 dark:bg-neutral-900 rounded-2xl mb-6 overflow-hidden relative">
-                   <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-cyan-500/10 group-hover:scale-105 transition-transform duration-500" />
-                   {/* Placeholder for image */}
-                   <div className="absolute inset-0 flex items-center justify-center text-neutral-300 font-bold text-2xl opacity-20">
-                     {study.client}
-                   </div>
+                <div className="aspect-video bg-neutral-100 dark:bg-neutral-900 rounded-none mb-6 overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 group-hover:scale-105 transition-transform duration-500" />
+                  {/* Placeholder for image */}
+                  <div className="absolute inset-0 flex items-center justify-center text-neutral-300 font-bold text-2xl opacity-20">
+                    {study.client}
+                  </div>
                 </div>
                 <div className="flex items-center gap-4 mb-3">
-                  <span className="text-sm font-medium text-violet-600 dark:text-violet-400">
+                  <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
                     {study.category}
                   </span>
                   <span className="text-sm text-neutral-500">
                     {study.industry}
                   </span>
                 </div>
-                <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-3 group-hover:text-violet-600 transition-colors">
+                <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-3 group-hover:text-blue-600 transition-colors">
                   {study.title}
                 </h2>
                 <p className="text-neutral-600 dark:text-neutral-400 mb-4 line-clamp-2">

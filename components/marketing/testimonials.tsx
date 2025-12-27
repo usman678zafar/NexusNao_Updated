@@ -50,7 +50,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 bg-neutral-50 dark:bg-neutral-900/50 rounded-[2.5rem] mx-4 my-4 overflow-hidden">
+    <section className="py-24 bg-neutral-50 dark:bg-neutral-900/50 mx-4 my-4 overflow-hidden rounded-none">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
@@ -65,20 +65,23 @@ export function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full"
+              transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 p-8 rounded-none shadow-sm hover:shadow-md transition-shadow flex flex-col h-full"
             >
               <div className="flex justify-between items-start mb-6">
-                <Quote className="w-8 h-8 text-violet-500/20" />
+                <Quote className="w-8 h-8 text-blue-500/20" />
                 <span className="text-2xl" role="img" aria-label={`Flag of ${testimonial.flag}`}>{testimonial.flag}</span>
               </div>
-              <p className="text-neutral-700 dark:text-neutral-300 mb-8 leading-relaxed flex-grow">
+              <p className="text-neutral-700 dark:text-neutral-300 mb-8 leading-relaxed flex-grow italic">
                 "{testimonial.quote}"
               </p>
               <div className="flex items-center gap-4 mt-auto">
+                <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center font-bold text-blue-600 dark:text-blue-400">
+                  {testimonial.author[0]}
+                </div>
                 <div>
                   <div className="font-semibold text-neutral-900 dark:text-white">
                     {testimonial.author}

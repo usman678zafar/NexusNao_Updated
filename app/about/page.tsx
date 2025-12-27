@@ -55,9 +55,9 @@ export default function AboutPage() {
                 Founded in 2010, we've grown from a small group of passionate coders to a global agency trusted by Fortune 500 companies and ambitious startups alike.
               </p>
             </div>
-            <div className="bg-neutral-100 dark:bg-neutral-900 rounded-2xl aspect-video flex items-center justify-center">
-               {/* Placeholder for team image */}
-               <span className="text-neutral-400 font-medium">Team Photo</span>
+            <div className="bg-neutral-100 dark:bg-neutral-900 rounded-none aspect-video flex items-center justify-center">
+              {/* Placeholder for team image */}
+              <span className="text-neutral-400 font-medium">Team Photo</span>
             </div>
           </div>
 
@@ -66,8 +66,8 @@ export default function AboutPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-neutral-50 dark:bg-neutral-900 p-8 rounded-2xl text-center">
-                <div className="w-12 h-12 mx-auto bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 rounded-full flex items-center justify-center mb-6">
+              <div key={index} className="bg-neutral-50 dark:bg-neutral-900 p-8 rounded-none text-center">
+                <div className="w-12 h-12 mx-auto bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-none flex items-center justify-center mb-6">
                   <value.icon className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3">

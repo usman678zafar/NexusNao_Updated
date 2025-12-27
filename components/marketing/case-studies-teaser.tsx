@@ -17,7 +17,7 @@ const caseStudies = [
     title: "AI-Powered Analytics",
     category: "AI Solutions",
     bgImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2065&auto=format&fit=crop",
-    colorOverlay: "from-violet-900/70 to-purple-900/70",
+    colorOverlay: "from-blue-900/70 to-blue-800/70",
     href: "/case-studies/ai-analytics",
   },
   {
@@ -53,11 +53,11 @@ export function CaseStudiesTeaser() {
           {caseStudies.map((study, index) => (
             <motion.div
               key={study.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative aspect-[4/3] overflow-hidden cursor-pointer"
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="group relative aspect-[4/3] overflow-hidden cursor-pointer rounded-none"
             >
               <Link href={study.href}>
                 {/* Background Image */}
@@ -71,7 +71,7 @@ export function CaseStudiesTeaser() {
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300" />
 
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                  <span className="text-sm font-medium text-violet-300 mb-2">
+                  <span className="text-sm font-medium text-blue-300 mb-2">
                     {study.category}
                   </span>
                   <h3 className="text-2xl font-bold text-white mb-4">

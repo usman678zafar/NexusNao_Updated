@@ -58,7 +58,7 @@ export function ProcessTeaser() {
           backgroundImage: 'url(https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop)'
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-900/95 via-blue-900/95 to-cyan-900/95" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-blue-800/95 to-cyan-900/95" />
       <div className="absolute inset-0 bg-black/30" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -66,7 +66,7 @@ export function ProcessTeaser() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             How We Work
           </h2>
-          <p className="text-lg text-violet-200">
+          <p className="text-lg text-blue-100">
             A proven methodology for delivering excellence.
           </p>
         </div>
@@ -77,11 +77,11 @@ export function ProcessTeaser() {
             return (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative overflow-hidden"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative overflow-hidden rounded-none"
               >
                 {/* Background Image */}
                 <div
@@ -96,11 +96,11 @@ export function ProcessTeaser() {
                 <div className="relative z-10 p-8 border border-white/10 group-hover:border-white/30 transition-colors duration-300">
                   {/* Icon */}
                   <div className="w-12 h-12 bg-white/10 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-6 h-6 text-violet-300" />
+                    <Icon className="w-6 h-6 text-blue-300" />
                   </div>
 
                   {/* Number */}
-                  <div className="text-5xl font-bold text-white mb-4 drop-shadow-lg">
+                  <div className="text-5xl font-bold text-white mb-4 drop-shadow-lg font-mono opacity-20 group-hover:opacity-40 transition-opacity">
                     {step.number}
                   </div>
 
@@ -110,7 +110,7 @@ export function ProcessTeaser() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-violet-200 leading-relaxed">
+                  <p className="text-blue-100 leading-relaxed">
                     {step.description}
                   </p>
                 </div>

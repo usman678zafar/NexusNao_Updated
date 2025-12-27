@@ -61,7 +61,7 @@ export function ContactForm() {
           <input
             id="name"
             {...register("name")}
-            className="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 focus:ring-2 focus:ring-violet-500 outline-none transition-all"
+            className="w-full px-4 py-3 rounded-none border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
             placeholder="John Doe"
           />
           {errors.name && <p className="text-sm text-red-500">{errors.name.message}</p>}
@@ -74,7 +74,7 @@ export function ContactForm() {
             id="email"
             type="email"
             {...register("email")}
-            className="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 focus:ring-2 focus:ring-violet-500 outline-none transition-all"
+            className="w-full px-4 py-3 rounded-none border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
             placeholder="john@example.com"
           />
           {errors.email && <p className="text-sm text-red-500">{errors.email.message}</p>}
@@ -88,7 +88,7 @@ export function ContactForm() {
         <input
           id="company"
           {...register("company")}
-          className="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 focus:ring-2 focus:ring-violet-500 outline-none transition-all"
+          className="w-full px-4 py-3 rounded-none border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
           placeholder="Acme Inc."
         />
       </div>
@@ -101,13 +101,13 @@ export function ContactForm() {
           id="message"
           {...register("message")}
           rows={5}
-          className="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 focus:ring-2 focus:ring-violet-500 outline-none transition-all resize-none"
+          className="w-full px-4 py-3 rounded-none border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 focus:ring-2 focus:ring-blue-500 outline-none transition-all resize-none"
           placeholder="Tell us about your project..."
         />
         {errors.message && <p className="text-sm text-red-500">{errors.message.message}</p>}
       </div>
 
-      <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+      <Button type="submit" size="lg" className="w-full rounded-none" disabled={isSubmitting}>
         {isSubmitting ? (
           <>
             <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...

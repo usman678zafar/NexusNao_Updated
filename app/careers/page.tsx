@@ -48,7 +48,7 @@ export default function CareersPage() {
           </h2>
           <div className="space-y-6">
             {roles.map((role, index) => (
-              <div key={index} className="flex flex-col md:flex-row items-start md:items-center justify-between bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 hover:border-violet-500/50 transition-colors">
+              <div key={index} className="flex flex-col md:flex-row items-start md:items-center justify-between bg-neutral-50 dark:bg-neutral-900 p-6 rounded-none border border-neutral-200 dark:border-neutral-800 hover:border-blue-500/50 transition-colors">
                 <div className="mb-4 md:mb-0">
                   <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-2">
                     {role.title}
@@ -61,7 +61,7 @@ export default function CareersPage() {
                     <span>{role.type}</span>
                   </div>
                 </div>
-                <Button variant="outline" asChild>
+                <Button variant="outline" asChild className="rounded-none">
                   <Link href="/contact">
                     Apply Now <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>

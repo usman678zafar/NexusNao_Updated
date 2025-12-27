@@ -11,38 +11,38 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 const services = [
-  { 
-    name: "Custom Software", 
+  {
+    name: "Custom Software",
     href: "/services/custom-software-development",
     icon: Terminal,
     description: "Tailored solutions for your unique needs"
   },
-  { 
-    name: "E-commerce Solutions", 
+  {
+    name: "E-commerce Solutions",
     href: "/services/e-commerce-solutions",
     icon: ShoppingBag,
     description: "Scalable online stores that convert"
   },
-  { 
-    name: "AI Solutions", 
+  {
+    name: "AI Solutions",
     href: "/services/ai-solutions",
     icon: Bot,
     description: "Intelligent automation and insights"
   },
-  { 
-    name: "UI/UX Design", 
+  {
+    name: "UI/UX Design",
     href: "/services/ui-ux-design",
     icon: PenTool,
     description: "Beautiful, intuitive interfaces"
   },
-  { 
-    name: "Business Intelligence", 
+  {
+    name: "Business Intelligence",
     href: "/services/business-intelligence",
     icon: LineChart,
     description: "Data-driven decision making"
   },
-  { 
-    name: "Digital Transformation", 
+  {
+    name: "Digital Transformation",
     href: "/services/digital-transformation",
     icon: Globe,
     description: "Modernize your operations"
@@ -105,11 +105,11 @@ export function Header() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 z-50 group">
-          <Image 
-            src={mounted && (theme === 'dark' || resolvedTheme === 'dark') ? "/logo-white.png" : "/logo1.png"} 
-            alt="Nexus Nao" 
-            width={180} 
-            height={40} 
+          <Image
+            src={mounted && (theme === 'dark' || resolvedTheme === 'dark') ? "/logo-white.png" : "/logo1.png"}
+            alt="Nexus Nao"
+            width={180}
+            height={40}
             className="h-10 w-auto object-contain"
           />
         </Link>
@@ -117,7 +117,7 @@ export function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-1">
           {navigation.map((item) => (
-            <div 
+            <div
               key={item.name}
               className="relative"
               ref={item.hasDropdown ? dropdownRef : null}
@@ -127,9 +127,9 @@ export function Header() {
               <Link
                 href={item.href}
                 className={cn(
-                  "relative px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 flex items-center gap-1 group z-10",
+                  "relative px-4 py-2 rounded-none text-sm font-medium transition-colors duration-200 flex items-center gap-1 group z-10",
                   pathname === item.href || pathname.startsWith(item.href + "/")
-                    ? "text-violet-600 dark:text-violet-300"
+                    ? "text-blue-600 dark:text-blue-300"
                     : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
                 )}
               >
@@ -137,11 +137,11 @@ export function Header() {
                 {(pathname === item.href || pathname.startsWith(item.href + "/")) && (
                   <motion.div
                     layoutId="activeNav"
-                    className="absolute inset-0 bg-violet-100 dark:bg-violet-900/40 rounded-full -z-10"
+                    className="absolute inset-0 bg-blue-100 dark:bg-blue-900/40 rounded-none -z-10"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
-                
+
                 <motion.span whileTap={{ scale: 0.95 }} className="flex items-center gap-1">
                   {item.name}
                   {item.hasDropdown && (
@@ -156,11 +156,11 @@ export function Header() {
               {/* Services Dropdown */}
               {item.hasDropdown && showServicesDropdown && (
                 <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute top-full left-0 mt-2 w-80 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-2xl overflow-hidden"
+                  initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.98 }}
+                  transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  className="absolute top-full left-0 mt-2 w-80 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-none shadow-2xl overflow-hidden"
                 >
                   <div className="p-2">
                     {services.map((service) => {
@@ -169,9 +169,9 @@ export function Header() {
                         <Link
                           key={service.name}
                           href={service.href}
-                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-violet-50 dark:hover:bg-violet-950/30 transition-colors group"
+                          className="flex items-start gap-3 p-3 rounded-none hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-colors group"
                         >
-                          <div className="mt-1 p-2 rounded-lg bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 group-hover:scale-110 transition-transform">
+                          <div className="mt-1 p-2 rounded-none bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
                             <Icon className="w-4 h-4" />
                           </div>
                           <div className="flex-1">
@@ -187,9 +187,9 @@ export function Header() {
                     })}
                   </div>
                   <div className="border-t border-neutral-200 dark:border-neutral-800 p-3 bg-neutral-50 dark:bg-neutral-900/50">
-                    <Link 
-                      href="/services" 
-                      className="text-sm font-medium text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 flex items-center gap-1"
+                    <Link
+                      href="/services"
+                      className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center gap-1"
                     >
                       View all services <ArrowRight className="w-3 h-3" />
                     </Link>
@@ -206,20 +206,20 @@ export function Header() {
             variant="ghost"
             size="icon"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800"
+            className="rounded-none hover:bg-neutral-100 dark:hover:bg-neutral-800"
           >
             <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             <span className="sr-only">Toggle theme</span>
           </Button>
-          <Button 
-            variant="ghost" 
-            asChild 
-            className="rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800"
+          <Button
+            variant="ghost"
+            asChild
+            className="rounded-none hover:bg-neutral-100 dark:hover:bg-neutral-800"
           >
             <Link href="/contact">Contact</Link>
           </Button>
-          <Button asChild className="rounded-full shadow-lg shadow-violet-500/20 hover:shadow-violet-500/30 transition-shadow">
+          <Button asChild className="rounded-none shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 transition-shadow">
             <Link href="/contact">
               Book Discovery <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
@@ -232,7 +232,7 @@ export function Header() {
             variant="ghost"
             size="icon"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="rounded-full text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+            className="rounded-none text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"
           >
             <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -279,7 +279,7 @@ export function Header() {
                           <Link
                             key={service.name}
                             href={service.href}
-                            className="block px-4 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                            className="block px-4 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                           >
                             {service.name}
                           </Link>
@@ -296,17 +296,17 @@ export function Header() {
                     variant="ghost"
                     size="icon"
                     onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                    className="rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                    className="rounded-none hover:bg-neutral-100 dark:hover:bg-neutral-800"
                   >
                     <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                     <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                     <span className="sr-only">Toggle theme</span>
                   </Button>
                 </div>
-                <Button variant="outline" asChild className="w-full rounded-full">
+                <Button variant="outline" asChild className="w-full rounded-none">
                   <Link href="/contact">Contact Us</Link>
                 </Button>
-                <Button asChild className="w-full rounded-full">
+                <Button asChild className="w-full rounded-none">
                   <Link href="/contact">Book Discovery Call</Link>
                 </Button>
               </div>

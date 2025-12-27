@@ -3,17 +3,18 @@
 
 @theme {
   /* Colors */
-  --color-primary-50: #F5F3FF;
-  --color-primary-100: #EDE9FE;
-  --color-primary-200: #DDD6FE;
-  --color-primary-300: #C4B5FD;
-  --color-primary-400: #A78BFA;
-  --color-primary-500: #8B5CF6;
-  --color-primary-600: #7C3AED;
-  --color-primary-700: #6D28D9;
-  --color-primary-800: #5B21B6;
-  --color-primary-900: #4C1D95;
-  --color-primary-950: #2E1065;
+  --color-primary-50: #EBF5FF;
+  --color-primary-100: #D1E9FF;
+  --color-primary-200: #A3D3FF;
+  --color-primary-300: #75BDFF;
+  --color-primary-400: #47A7FF;
+  --color-primary-500: #1074EE;
+  /* Base Color */
+  --color-primary-600: #0E66D1;
+  --color-primary-700: #0C58B4;
+  --color-primary-800: #0A4A97;
+  --color-primary-900: #083C7A;
+  --color-primary-950: #05264D;
 
   --color-accent-cyan: #22D3EE;
   --color-accent-blue: #3B82F6;
@@ -46,7 +47,79 @@
   --radius-3xl: 0px;
 
   /* Shadows */
-  --shadow-glow: 0 0 20px rgba(139, 92, 246, 0.3);
+  --shadow-glow: 0 0 20px rgba(16, 116, 238, 0.3);
+
+  /* Transitions */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shine: shine 2s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes shine {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: var(--animate-float);
+}
+
+.reveal-up {
+  animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.shine-effect:hover::after {
+  animation: shine 1.5s infinite;
 }
 
 :root {

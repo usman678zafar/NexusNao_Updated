@@ -10,8 +10,8 @@ const services = [
     title: "Custom Software Development",
     description: "Scalable, secure, and high-performance applications tailored to your unique business needs.",
     href: "/services/custom-software-development",
-    color: "text-violet-400",
-    bg: "bg-violet-500/10",
+    color: "text-blue-400",
+    bg: "bg-blue-500/10",
     bgImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
   },
   {
@@ -37,8 +37,8 @@ const services = [
     title: "UI/UX Design",
     description: "Intuitive, user-centric designs that delight users and enhance engagement.",
     href: "/services/ui-ux-design",
-    color: "text-pink-400",
-    bg: "bg-pink-500/10",
+    color: "text-blue-400",
+    bg: "bg-blue-500/10",
     bgImage: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2064&auto=format&fit=crop",
   },
   {
@@ -78,11 +78,11 @@ export function ServicesGrid() {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 hover:border-violet-200 dark:hover:border-violet-500 hover:shadow-xl hover:shadow-violet-500/5 dark:hover:shadow-violet-500/10 transition-all duration-300"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="group relative overflow-hidden bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2"
             >
               {/* Background Image */}
               <div
@@ -106,7 +106,7 @@ export function ServicesGrid() {
                 </p>
                 <Link
                   href={service.href}
-                  className="inline-flex items-center text-sm font-medium text-white hover:text-violet-300 transition-colors"
+                  className="inline-flex items-center text-sm font-medium text-white hover:text-blue-300 transition-colors"
                 >
                   Learn more <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
