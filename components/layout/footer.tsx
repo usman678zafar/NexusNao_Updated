@@ -49,11 +49,8 @@ export function Footer() {
               <Link href="https://twitter.com" className="p-2 bg-neutral-900 hover:bg-neutral-800 transition-colors text-neutral-400 hover:text-white">
                 <Twitter className="w-5 h-5" />
               </Link>
-              <Link href="https://linkedin.com" className="p-2 bg-neutral-900 hover:bg-neutral-800 transition-colors text-neutral-400 hover:text-white">
+              <Link href="https://www.linkedin.com/company/106915466/" className="p-2 bg-neutral-900 hover:bg-neutral-800 transition-colors text-neutral-400 hover:text-white">
                 <Linkedin className="w-5 h-5" />
-              </Link>
-              <Link href="https://github.com" className="p-2 bg-neutral-900 hover:bg-neutral-800 transition-colors text-neutral-400 hover:text-white">
-                <Github className="w-5 h-5" />
               </Link>
             </div>
           </div>
