@@ -46,7 +46,7 @@ export function Footer() {
               We engineer high-performance digital platforms, AI solutions, and custom software for ambitious global enterprises.
             </p>
             <div className="flex items-center gap-4">
-              <Link href="https://twitter.com" className="p-2 bg-neutral-900 hover:bg-neutral-800 transition-colors text-neutral-400 hover:text-white">
+              <Link href="https://x.com/nexus_nao_pk" className="p-2 bg-neutral-900 hover:bg-neutral-800 transition-colors text-neutral-400 hover:text-white">
                 <Twitter className="w-5 h-5" />
               </Link>
               <Link href="https://www.linkedin.com/company/106915466/" className="p-2 bg-neutral-900 hover:bg-neutral-800 transition-colors text-neutral-400 hover:text-white">
