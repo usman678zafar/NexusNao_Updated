@@ -31,7 +31,7 @@ const caseStudies = [
 
 export function CaseStudiesTeaser() {
   return (
-    <section className="py-24 bg-white dark:bg-neutral-950 rounded-[2.5rem] mx-4 my-4 overflow-hidden">
+    <section className="py-24 bg-white dark:bg-neutral-950 mx-4 my-4 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
@@ -57,19 +57,19 @@ export function CaseStudiesTeaser() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer"
+              className="group relative aspect-[4/3] overflow-hidden cursor-pointer"
             >
               <Link href={study.href}>
                 {/* Background Image */}
-                <div 
+                <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                   style={{ backgroundImage: `url(${study.bgImage})` }}
                 />
-                
+
                 {/* Color Overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${study.colorOverlay} transition-opacity duration-300`} />
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300" />
-                
+
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
                   <span className="text-sm font-medium text-violet-300 mb-2">
                     {study.category}

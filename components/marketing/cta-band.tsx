@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 export function CtaBand() {
   return (
-    <section className="py-24 bg-white dark:bg-neutral-950 border-t border-neutral-200 dark:border-neutral-800 rounded-[2.5rem] mx-4 my-4 overflow-hidden">
+    <section className="py-24 bg-white dark:bg-neutral-950 border-t border-neutral-200 dark:border-neutral-800 mx-4 my-4 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 text-center">
         <h2 className="text-3xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
           Ready to Transform Your Business?
@@ -15,12 +15,12 @@ export function CtaBand() {
           Let's discuss your next project and how we can help you achieve your goals.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg" className="h-14 px-8 text-lg rounded-full" asChild>
+          <Button size="lg" className="h-14 px-8 text-lg rounded-none" asChild>
             <Link href="/contact">
               Get a Proposal <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
-          <Button variant="outline" size="lg" className="h-14 px-8 text-lg rounded-full" asChild>
+          <Button variant="outline" size="lg" className="h-14 px-8 text-lg rounded-none" asChild>
             <Link href="/services">
               Explore Services
             </Link>

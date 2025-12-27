@@ -63,7 +63,7 @@ const services = [
 
 export function ServicesGrid() {
   return (
-    <section className="relative py-24 overflow-hidden bg-neutral-50 dark:bg-neutral-900 rounded-[2.5rem] mx-4 my-4">
+    <section className="relative py-24 overflow-hidden bg-neutral-50 dark:bg-neutral-900 mx-4 my-4">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
@@ -82,20 +82,20 @@ export function ServicesGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 hover:border-violet-200 dark:hover:border-violet-500 hover:shadow-xl hover:shadow-violet-500/5 dark:hover:shadow-violet-500/10 transition-all duration-300"
+              className="group relative overflow-hidden bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 hover:border-violet-200 dark:hover:border-violet-500 hover:shadow-xl hover:shadow-violet-500/5 dark:hover:shadow-violet-500/10 transition-all duration-300"
             >
               {/* Background Image */}
-              <div 
+              <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                 style={{ backgroundImage: `url(${service.bgImage})` }}
               />
-              
+
               {/* Color Overlay */}
               <div className="absolute inset-0 bg-black/70 dark:bg-black/60 group-hover:bg-black/60 dark:group-hover:bg-black/50 transition-all duration-300" />
-              
+
               {/* Content */}
               <div className="relative z-10 p-8">
-                <div className={`w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-12 h-12 bg-white/10 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <service.icon className={`w-6 h-6 ${service.color}`} />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-3">
