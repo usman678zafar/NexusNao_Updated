@@ -50,7 +50,7 @@ const steps = [
 
 export function ProcessTeaser() {
   return (
-    <section className="relative py-24 overflow-hidden mx-4 my-4">
+    <section className="relative py-24 overflow-hidden">
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

@@ -18,7 +18,7 @@ export function Hero() {
     }
   }, [])
   return (
-    <section className="relative min-h-[calc(100svh-2rem)] flex items-center justify-center overflow-hidden bg-black mx-4 my-4">
+    <section className="relative min-h-svh flex items-center justify-center overflow-hidden bg-black">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <video

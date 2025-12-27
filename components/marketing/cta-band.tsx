@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 export function CtaBand() {
   return (
-    <section className="py-24 bg-white dark:bg-neutral-950 border-t border-neutral-200 dark:border-neutral-800 mx-4 my-4 overflow-hidden">
+    <section className="py-24 bg-white dark:bg-neutral-950 border-t border-neutral-200 dark:border-neutral-800 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 text-center">
         <h2 className="text-3xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
           Ready to Transform Your Business?
