@@ -94,39 +94,47 @@ export function Hero() {
           {/* Main Content */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white leading-[0.95] perspective-1000">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white leading-[0.95] perspective-1000">
                 <span className="block overflow-hidden pb-2">
-                  {titleText.split("").map((char, i) => (
-                    <motion.span
-                      key={i}
-                      initial={{ y: "100%", opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{
-                        duration: 0.8,
-                        delay: 0.1 + i * 0.03,
-                        ease: [0.16, 1, 0.3, 1]
-                      }}
-                      className="inline-block"
-                    >
-                      {char === " " ? "\u00A0" : char}
-                    </motion.span>
+                  {titleText.split(" ").map((word, wordIdx) => (
+                    <span key={wordIdx} className="inline-block whitespace-nowrap mr-[0.2em]">
+                      {word.split("").map((char, charIdx) => (
+                        <motion.span
+                          key={charIdx}
+                          initial={{ y: "100%", opacity: 0 }}
+                          animate={{ y: 0, opacity: 1 }}
+                          transition={{
+                            duration: 0.8,
+                            delay: 0.1 + (wordIdx * 5 + charIdx) * 0.03,
+                            ease: [0.16, 1, 0.3, 1]
+                          }}
+                          className="inline-block"
+                        >
+                          {char}
+                        </motion.span>
+                      ))}
+                    </span>
                   ))}
                 </span>
-                <span className="block overflow-hidden italic pb-4">
-                  {subtitleText.split("").map((char, i) => (
-                    <motion.span
-                      key={i}
-                      initial={{ y: "100%", opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{
-                        duration: 0.8,
-                        delay: 0.8 + i * 0.03,
-                        ease: [0.16, 1, 0.3, 1]
-                      }}
-                      className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400"
-                    >
-                      {char === " " ? "\u00A0" : char}
-                    </motion.span>
+                <span className="block overflow-hidden italic pb-4 font-serif">
+                  {subtitleText.split(" ").map((word, wordIdx) => (
+                    <span key={wordIdx} className="inline-block whitespace-nowrap mr-[0.2em]">
+                      {word.split("").map((char, charIdx) => (
+                        <motion.span
+                          key={charIdx}
+                          initial={{ y: "100%", opacity: 0 }}
+                          animate={{ y: 0, opacity: 1 }}
+                          transition={{
+                            duration: 0.8,
+                            delay: 0.8 + (wordIdx * 5 + charIdx) * 0.03,
+                            ease: [0.16, 1, 0.3, 1]
+                          }}
+                          className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400"
+                        >
+                          {char}
+                        </motion.span>
+                      ))}
+                    </span>
                   ))}
                 </span>
               </h1>
