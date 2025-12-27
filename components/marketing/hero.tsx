@@ -88,7 +88,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="container relative z-20 px-4 sm:px-6 md:px-12 lg:px-16 py-16 mx-auto">
+      <div className="container relative z-20 px-4 sm:px-6 md:px-12 lg:px-16 pt-40 pb-20 mx-auto">
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-12">
 
           {/* Main Content */}

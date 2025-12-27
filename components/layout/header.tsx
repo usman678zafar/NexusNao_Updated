@@ -93,14 +93,14 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none">
-      <div className="container mx-auto px-4 sm:px-6 py-4 md:py-6 lg:py-8">
+      <div className="mx-auto px-4 sm:px-6 py-4 md:py-6 lg:py-8">
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           className={cn(
-            "mx-auto flex items-center justify-between gap-4 px-4 md:px-6 py-2 md:py-3 transition-all duration-500 pointer-events-auto overflow-hidden rounded-full border border-white/10",
+            "mx-auto flex items-center justify-between gap-4 px-4 md:px-6 py-2 md:py-3 transition-all duration-500 pointer-events-auto rounded-full border border-white/10 bg-neutral-950/10 backdrop-blur-md",
             isScrolled
-              ? "max-w-5xl shadow-2xl"
+              ? "max-w-5xl shadow-2xl bg-neutral-950/40"
               : "max-w-6xl shadow-none"
           )}
         >
