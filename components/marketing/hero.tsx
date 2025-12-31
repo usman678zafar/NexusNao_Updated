@@ -53,16 +53,6 @@ export function Hero() {
 
       {/* Background Media & Overlays */}
       <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="object-cover w-full h-full opacity-50 scale-105"
-        >
-          <source src="/vid1-2.mp4" type="video/mp4" />
-        </video>
 
         {/* Cinematic Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/80 md:via-transparent" />
@@ -217,7 +207,7 @@ export function Hero() {
 
         </div>
       </div>
-    </section>
+    </section >
   )
 }
 
