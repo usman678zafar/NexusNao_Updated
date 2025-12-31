@@ -44,6 +44,10 @@ export const metadata: Metadata = {
   robots: {
     follow: true,
   },
+  icons: {
+    icon: '/logo2.png',
+    apple: '/logo2.png',
+  },
 };
 
 export default function RootLayout({
@@ -56,6 +60,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 selection:bg-violet-500/30`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Nexus Nao',
+              url: 'https://nexusnao.com',
+              logo: 'https://nexusnao.com/logo2.png',
+              sameAs: [
+                'https://twitter.com/nexusnao',
+                'https://linkedin.com/company/nexusnao'
+              ]
+            })
+          }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
