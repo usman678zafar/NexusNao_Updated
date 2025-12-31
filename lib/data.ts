@@ -10,6 +10,7 @@ export const services = [
             headline: "Custom Software Built for Scale & Speed.",
             subhead: "We design and develop bespoke software solutions that solve your specific business challenges and drive efficiency.",
         },
+        image: "/assets/images/services/custom-software.png",
         problems: [
             "Legacy systems slowing down operations",
             "Inability to scale with growing user base",
@@ -44,6 +45,7 @@ export const services = [
             headline: "E-commerce That Converts.",
             subhead: "We build high-performance online stores that drive sales and customer loyalty.",
         },
+        image: "/assets/images/services/e-commerce.png",
         problems: [
             "High cart abandonment rates",
             "Slow page load times affecting SEO",
@@ -77,6 +79,7 @@ export const services = [
             headline: "Unlock the Power of AI.",
             subhead: "Leverage machine learning and artificial intelligence to automate processes and gain predictive insights.",
         },
+        image: "/assets/images/services/ai-solutions.png",
         problems: [
             "Manual, repetitive tasks eating up time",
             "Unstructured data that's hard to analyze",
@@ -110,6 +113,7 @@ export const services = [
             headline: "Design That Delights.",
             subhead: "We craft intuitive user interfaces and engaging experiences that users love.",
         },
+        image: "/assets/images/services/ui-ux-design.png",
         problems: [
             "Low user engagement or retention",
             "Confusing navigation or information architecture",
@@ -143,6 +147,7 @@ export const services = [
             headline: "Turn Data into Decisions.",
             subhead: "We build BI dashboards and data pipelines that give you real-time visibility into your business.",
         },
+        image: "/assets/images/services/business-intelligence.png",
         problems: [
             "Siloed data across departments",
             "Manual reporting in spreadsheets",
@@ -176,6 +181,7 @@ export const services = [
             headline: "Evolve or Get Left Behind.",
             subhead: "We help established enterprises modernize their technology stack and culture for the digital age.",
         },
+        image: "/assets/images/services/digital-transformation.png",
         problems: [
             "Outdated legacy systems",
             "Slow time-to-market",

@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Metadata } from "next"
 import { ArrowRight, CheckCircle2, HelpCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import { CtaBand } from "@/components/marketing/cta-band"
 import { services } from "@/lib/data"
 
@@ -59,7 +60,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      
+
       {/* Hero */}
       <section className="relative py-24 bg-neutral-950 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-violet-900/20 to-cyan-900/20" />
@@ -103,12 +104,23 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 ))}
               </ul>
             </div>
-            <div className="bg-neutral-100 dark:bg-neutral-900 rounded-2xl p-8 aspect-square flex items-center justify-center">
-               {/* Placeholder for illustration */}
-               <div className="text-neutral-400 text-center">
-                 <service.icon className="w-24 h-24 mx-auto mb-4 opacity-20" />
-                 <p>Illustration: Solving {service.title} Challenges</p>
-               </div>
+            <div className="bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden aspect-square relative shadow-2xl">
+              {service.image ? (
+                <Image
+                  src={service.image}
+                  alt={`Solving ${service.title} Challenges`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              ) : (
+                <div className="flex items-center justify-center h-full">
+                  <div className="text-neutral-400 text-center">
+                    <service.icon className="w-24 h-24 mx-auto mb-4 opacity-20" />
+                    <p>Illustration: Solving {service.title} Challenges</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
