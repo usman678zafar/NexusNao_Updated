@@ -1,5 +1,6 @@
 import { CtaBand } from "@/components/marketing/cta-band"
 import { Users, Target, Heart, Award } from "lucide-react"
+import Image from "next/image"
 
 export const metadata = {
   title: "About Us",
@@ -55,9 +56,14 @@ export default function AboutPage() {
                 Founded in 2010, we've grown from a small group of passionate coders to a global agency trusted by Fortune 500 companies and ambitious startups alike.
               </p>
             </div>
-            <div className="bg-neutral-100 dark:bg-neutral-900 rounded-none aspect-video flex items-center justify-center">
-              {/* Placeholder for team image */}
-              <span className="text-neutral-400 font-medium">Team Photo</span>
+            <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl">
+              <Image
+                src="/Team.jpg"
+                alt="Our Team"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </div>
 
