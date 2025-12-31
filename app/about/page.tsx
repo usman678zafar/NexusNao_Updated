@@ -53,7 +53,7 @@ export default function AboutPage() {
                 To empower businesses with technology that makes a difference. We believe that software has the power to transform industries and improve lives.
               </p>
               <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                Founded in 2010, we've grown from a small group of passionate coders to a global agency trusted by Fortune 500 companies and ambitious startups alike.
+                Founded in 2025, we've grown from a small group of passionate coders to a global agency trusted by Fortune 10 companies and ambitious startups alike.
               </p>
             </div>
             <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl">
