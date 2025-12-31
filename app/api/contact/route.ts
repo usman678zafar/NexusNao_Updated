@@ -4,15 +4,15 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
-    try {
-        const { name, email, company, message } = await req.json();
+  try {
+    const { name, email, company, message } = await req.json();
 
-        const data = await resend.emails.send({
-            from: 'NexusNao Contact <onboarding@resend.dev>',
-            to: ['nexusnaopk@gmail.com'],
-            reply_to: email, // Allow replying directly to the sender
-            subject: `New Contact Form Submission from ${name}`,
-            html: `
+    const data = await resend.emails.send({
+      from: 'NexusNao Contact <onboarding@resend.dev>',
+      to: ['nexusnaopk@gmail.com'],
+      replyTo: email, // Allow replying directly to the sender
+      subject: `New Contact Form Submission from ${name}`,
+      html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #2563EB;">New Contact Message</h2>
           <p>You have received a new inquiry from the NexusNao website.</p>
@@ -29,15 +29,35 @@ export async function POST(req: Request) {
           </div>
         </div>
       `,
-        });
+    });
 
-        if (data.error) {
-            return NextResponse.json({ error: data.error.message }, { status: 400 });
-        }
-
-        return NextResponse.json({ success: true, data });
-    } catch (error) {
-        console.error("Resend Error:", error);
-        return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
+    if (data.error) {
+      return NextResponse.json({ error: data.error.message }, { status: 400 });
     }
+
+    // Attempt to send Auto-Reply to the visitor
+    try {
+      await resend.emails.send({
+        from: 'NexusNao Team <onboarding@resend.dev>',
+        to: [email],
+        subject: 'We received your message!',
+        html: `
+                    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                        <h2 style="color: #2563EB;">Thanks for contacting NexusNao!</h2>
+                        <p>Hi ${name},</p>
+                        <p>We've received your message and will get back to you as soon as possible.</p>
+                        <p>Best regards,<br>The NexusNao Team</p>
+                    </div>
+                `,
+      });
+    } catch (autoReplyError) {
+      console.error("Auto-reply failed (requires verified domain in Resend):", autoReplyError);
+      // We don't block the success response if auto-reply fails
+    }
+
+    return NextResponse.json({ success: true, data });
+  } catch (error) {
+    console.error("Resend Error:", error);
+    return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
+  }
 }
