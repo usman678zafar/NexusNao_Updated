@@ -49,7 +49,7 @@ export default function AddArticlePage() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 dark:bg-neutral-950 pt-24 pb-12">
+        <div className="min-h-screen bg-gray-50 dark:bg-neutral-950 pt-40 pb-12">
             <div className="container mx-auto px-4 max-w-2xl">
                 <div className="bg-white dark:bg-neutral-900 rounded-2xl shadow-sm border border-neutral-200 dark:border-neutral-800 p-8">
                     <h1 className="text-3xl font-bold text-neutral-900 dark:text-white mb-8">Add New Article</h1>

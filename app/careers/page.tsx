@@ -32,7 +32,7 @@ const roles = [
 export default function CareersPage() {
   return (
     <>
-      <div className="pt-20 pb-10 bg-neutral-950 text-center">
+      <div className="pt-40 pb-10 bg-neutral-950 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
           Join Nexusnao
         </h1>

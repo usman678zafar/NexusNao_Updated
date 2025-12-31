@@ -98,10 +98,10 @@ export function Header() {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           className={cn(
-            "mx-auto flex items-center justify-between gap-4 px-4 md:px-6 py-2 md:py-3 transition-all duration-500 pointer-events-auto rounded-full border border-white/10 bg-neutral-950/10 backdrop-blur-md",
+            "mx-auto flex items-center justify-between gap-4 px-4 md:px-6 py-2 md:py-3 transition-all duration-500 pointer-events-auto rounded-full backdrop-blur-md",
             isScrolled
-              ? "max-w-5xl shadow-2xl bg-neutral-950/40"
-              : "max-w-6xl shadow-none"
+              ? "max-w-5xl shadow-2xl bg-neutral-950/80 border border-white/10"
+              : "max-w-6xl shadow-none bg-transparent border-transparent"
           )}
         >
           {/* Logo - Fixed width for centering nav */}

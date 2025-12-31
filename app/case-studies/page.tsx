@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { CtaBand } from "@/components/marketing/cta-band"
 import { caseStudies } from "@/lib/data"
@@ -11,7 +12,7 @@ export const metadata = {
 export default function CaseStudiesPage() {
   return (
     <>
-      <div className="pt-20 pb-10 bg-neutral-950 text-center">
+      <div className="pt-40 pb-10 bg-neutral-950 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
           Case Studies
         </h1>
@@ -26,11 +27,13 @@ export default function CaseStudiesPage() {
             {caseStudies.map((study) => (
               <Link key={study.slug} href={`/case-studies/${study.slug}`} className="group block">
                 <div className="aspect-video bg-neutral-100 dark:bg-neutral-900 rounded-none mb-6 overflow-hidden relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 group-hover:scale-105 transition-transform duration-500" />
-                  {/* Placeholder for image */}
-                  <div className="absolute inset-0 flex items-center justify-center text-neutral-300 font-bold text-2xl opacity-20">
-                    {study.client}
-                  </div>
+                  <Image
+                    src={study.image}
+                    alt={study.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
                 </div>
                 <div className="flex items-center gap-4 mb-3">
                   <span className="text-sm font-medium text-blue-600 dark:text-blue-400">

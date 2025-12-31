@@ -23,7 +23,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
     return (
         <>
-            <article className="pt-24 pb-16 bg-white dark:bg-neutral-950">
+            <article className="pt-40 pb-16 bg-white dark:bg-neutral-950">
                 <div className="container mx-auto px-4 md:px-6 max-w-4xl">
                     <Link
                         href="/insights"

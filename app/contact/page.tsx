@@ -12,7 +12,7 @@ export default function ContactPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="pt-20 pb-10 bg-neutral-950 text-center"
+        className="pt-40 pb-10 bg-neutral-950 text-center"
       >
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
           Let's Build Something Great
