@@ -30,7 +30,7 @@ export function ContactForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/message", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
